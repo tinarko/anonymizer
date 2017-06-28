@@ -56,17 +56,19 @@ if (type === 'default') {
     var output = outputData[i];
     output['member_id'] = Math.ceil(Math.random() * default_member_id).toString();
     output['person_code'] = Math.ceil(Math.random() * default_person_code).toString();
-    output['first_name'] = inputData[Math.floor(Math.random() * length)]['primary_first_name'];
+    output['first_name'] = inputData[Math.floor(Math.random() * length)]['first_name'];
     output['last_name'] = inputData[Math.floor(Math.random() * length)]['primary_last_name'];
-    output['date_of_birth'] = inputData[Math.floor(Math.random() * length)]['date_of_birth'];
+    output['date_of_birth'] = (Math.floor(Math.random() * (100)) + 1900).toString()
+                              + inputData[Math.floor(Math.random() * length)]['date_of_birth'].slice(4,10);
     output['gender'] = inputData[Math.floor(Math.random() * length)]['gender'];
     output['ssn'] = Math.ceil(Math.random() * default_ssn).toString();
-    output['address_1'] = inputData[Math.floor(Math.random() * length)]['address_1'];
+    output['address_1'] = Math.ceil(Math.random()*9).toString() 
+                          + inputData[Math.floor(Math.random() * length)]['address_1'].slice(1,100);
     output['address_2'] = inputData[Math.floor(Math.random() * length)]['address_2'];
     output['city'] = inputData[Math.floor(Math.random() * length)]['city'];
     output['state'] = inputData[Math.floor(Math.random() * length)]['state'];
     output['zip'] = Math.ceil(Math.random() * default_zip).toString();
-    output['primary_first_name'] = inputData[Math.floor(Math.random() * length)]['first_name'];
+    output['primary_first_name'] = inputData[Math.floor(Math.random() * length)]['primary_first_name'];
     output['primary_last_name'] = inputData[Math.floor(Math.random() * length)]['last_name'];
     output['prescription_number'] = Math.ceil(Math.random() * default_prescription_number).toString();
   }
